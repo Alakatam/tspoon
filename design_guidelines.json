@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "persona": "E1",
+    "mission": "Create a 'Cyber-Nostalgia' Pokemon Dashboard that feels like a high-tech Pokedex from 2077. Reject generic admin panels. Embrace neon, glass, and data density.",
+    "principles": [
+      "Fusion: GameBoy Nostalgia x Cyberpunk UI",
+      "Emotion: The thrill of the catch (High energy, rewarding visuals)",
+      "Content: Data is beautiful (Stats, Types, Levels are the heroes)",
+      "Contrast: Deep Void Black vs. Neon Type Colors"
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "heading": {
+        "family": "Outfit, sans-serif",
+        "weights": ["600", "700", "800"],
+        "usage": "Page titles, Card headers, Hero text. Gives a geometric, modern gaming feel."
+      },
+      "body": {
+        "family": "Inter, sans-serif",
+        "weights": ["400", "500"],
+        "usage": "Long form text, descriptions."
+      },
+      "mono": {
+        "family": "Rajdhani, sans-serif",
+        "weights": ["500", "600", "700"],
+        "usage": "Stats, Levels, IDs, Leaderboard ranks. Adds that 'Sci-Fi/Tech' flavor."
+      }
+    },
+    "scale": {
+      "h1": "text-4xl md:text-6xl font-bold tracking-tight",
+      "h2": "text-3xl md:text-4xl font-bold tracking-tight",
+      "h3": "text-2xl font-semibold tracking-normal",
+      "body": "text-base leading-relaxed text-slate-400",
+      "caption": "text-sm font-medium text-slate-500 uppercase tracking-wider"
+    }
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": {
+        "default": "#020617",
+        "paper": "#0f172a",
+        "subtle": "#1e293b"
+      },
+      "primary": {
+        "main": "#EAB308",
+        "hover": "#CA8A04",
+        "foreground": "#000000"
+      },
+      "secondary": {
+        "main": "#3B82F6",
+        "hover": "#2563EB",
+        "foreground": "#FFFFFF"
+      },
+      "accent": {
+        "fire": "#EF4444",
+        "water": "#3B82F6",
+        "grass": "#22C55E",
+        "electric": "#EAB308",
+        "psychic": "#A855F7",
+        "ghost": "#7C3AED",
+        "dragon": "#6366F1",
+        "dark": "#1F2937",
+        "steel": "#94A3B8",
+        "fairy": "#F472B6"
+      },
+      "text": {
+        "primary": "#F8FAFC",
+        "secondary": "#94A3B8",
+        "muted": "#64748B"
+      },
+      "border": {
+        "default": "#1E293B",
+        "active": "#334155"
+      }
+    },
+    "gradients": {
+      "hero": "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950",
+      "card": "bg-gradient-to-b from-slate-800/50 to-slate-900/50",
+      "glow": "bg-gradient-to-r from-yellow-500/20 to-orange-500/20"
+    }
+  },
+  "layout": {
+    "container": {
+      "maxWidth": "max-w-7xl",
+      "padding": "px-4 md:px-8 lg:px-12",
+      "center": "mx-auto"
+    },
+    "grid": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+      "pokedex": "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4",
+      "leaderboard": "flex flex-col gap-4"
+    },
+    "spacing": {
+      "section": "py-12 md:py-20",
+      "element": "mb-6"
+    }
+  },
+  "components": {
+    "Button": {
+      "base": "inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+      "variants": {
+        "default": "bg-yellow-500 text-black hover:bg-yellow-400 shadow-[0_0_15px_rgba(234,179,8,0.3)] hover:shadow-[0_0_25px_rgba(234,179,8,0.5)] font-bold uppercase tracking-wide",
+        "outline": "border border-slate-700 bg-transparent hover:bg-slate-800 text-slate-200",
+        "ghost": "hover:bg-slate-800 hover:text-slate-100",
+        "neon": "border border-blue-500/50 text-blue-400 hover:bg-blue-500/10 hover:text-blue-300 hover:border-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.1)]"
+      }
+    },
+    "Card": {
+      "base": "rounded-xl border border-slate-800 bg-slate-900/60 backdrop-blur-md text-slate-100 shadow-sm transition-all duration-300",
+      "hover": "hover:border-slate-600 hover:shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:-translate-y-1",
+      "glass": "bg-white/5 backdrop-blur-lg border border-white/10"
+    },
+    "Input": {
+      "base": "flex h-10 w-full rounded-md border border-slate-800 bg-slate-950 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500/50 disabled:cursor-not-allowed disabled:opacity-50"
+    },
+    "Badge": {
+      "base": "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+      "type": "uppercase tracking-wider font-mono"
+    }
+  },
+  "motion": {
+    "transitions": {
+      "default": "transition-all duration-200 ease-in-out",
+      "slow": "transition-all duration-500 ease-out"
+    },
+    "animations": {
+      "fadeIn": "animate-in fade-in duration-500",
+      "slideUp": "animate-in slide-in-from-bottom-4 duration-500",
+      "pulse": "animate-pulse"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1764258560163-198782335017?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "texture_grass": "https://images.unsplash.com/photo-1743816778493-64cf93ca3291?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "texture_water": "https://images.unsplash.com/photo-1669479412055-103edfb64cc4?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "placeholder_pokemon": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "usage": "Use thin strokes (1.5px) for a refined look. Use filled icons for active states."
+    }
+  },
+  "universal_guidelines": [
+    "NO AI SLOP: Avoid generic 'admin panel' looks. This is a GAME dashboard.",
+    "DARK MODE ONLY: Do not implement light mode. The brand is 'Night Mode Gaming'.",
+    "DATA DENSITY: Users want to see stats. Don't hide data behind too many clicks.",
+    "VISUAL HIERARCHY: Use color (Type Colors) to denote meaning, not just decoration.",
+    "INTERACTION: Every hover must feel 'electric'. Use glows, border shifts, and scale transforms.",
+    "GLASSMORPHISM: Use it for overlays and sticky headers, but keep the main content legible on solid/semi-solid backgrounds.",
+    "GRID BORDERS: Use subtle 1px borders between grid items to create a 'technical' look."
+  ],
+  "instructions_to_main_agent": [
+    "1. Install 'lucide-react', 'recharts', 'framer-motion', 'clsx', 'tailwind-merge' immediately.",
+    "2. Set up the Tailwind config to match the 'colors' section exactly.",
+    "3. Create a 'Layout' component that enforces the background and container widths.",
+    "4. Build the 'PokemonCard' component first - it is the atomic unit of this app.",
+    "5. Use the 'Rajdhani' font for all numbers and stats.",
+    "6. For the Pokedex, implement infinite scroll or virtualization if the list is long.",
+    "7. Ensure the 'Leaderboard' looks like a tournament bracket or high-score screen, not a spreadsheet."
+  ]
+}
