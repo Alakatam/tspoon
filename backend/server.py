@@ -26,7 +26,7 @@ redis_url = os.environ.get('REDIS_URL', 'redis://localhost:6379')
 redis_client = None
 
 # Create the main app
-app = FastAPI(title="PokeQuest Bot API")
+app = FastAPI(title="Twisted Spoon Bot API")
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
