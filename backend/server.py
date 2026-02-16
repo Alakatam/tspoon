@@ -572,12 +572,21 @@ async def get_bot_stats():
 @api_router.get("/global/settings")
 async def get_global_settings():
     """Get global game settings"""
-    settings = await db.global_settings.find_one({}, {"_id": 0})
-    if not settings:
-        default_settings = GlobalSettings()
-        settings = default_settings.model_dump()
-        await db.global_settings.insert_one(settings)
-    return settings
+    try:
+        settings = await db.global_settings.find_one({}, {"_id": 0})
+        if not settings:
+            default_settings = GlobalSettings()
+            settings = default_settings.model_dump()
+            # Use update with upsert to avoid duplicate key issues
+            await db.global_settings.update_one(
+                {},
+                {"$setOnInsert": settings},
+                upsert=True
+            )
+        return settings
+    except Exception as e:
+        # Return default settings on any error
+        return GlobalSettings().model_dump()
 
 @api_router.get("/global/weather")
 async def get_current_weather():
