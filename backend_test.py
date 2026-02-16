@@ -197,6 +197,8 @@ class PokemonAPITester:
         self.test_type_chart_endpoints()
         self.test_stats_endpoints()
         self.test_leaderboard_endpoints()
+        self.test_phase3_battle_endpoints()
+        self.test_phase4_trade_auction_endpoints()
         self.test_additional_endpoints()
         
         # Print summary
