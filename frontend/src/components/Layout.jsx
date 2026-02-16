@@ -115,7 +115,7 @@ export default function Layout({ children }) {
       <footer className="border-t border-slate-800 mt-auto">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-            <p>© 2025 PokeQuest Bot. Not affiliated with Pokémon or Nintendo.</p>
+            <p>© 2025 Twisted Spoon Bot. Not affiliated with Pokémon or Nintendo.</p>
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-green-500 pulse-live" />
