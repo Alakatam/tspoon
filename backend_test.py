@@ -152,6 +152,9 @@ class PokemonAPITester:
         
         # Test dex leaderboard
         self.test_endpoint("Get Dex Leaderboard", "GET", "/leaderboard/dex")
+        
+        # Test PvP leaderboard (Phase 3)
+        self.test_endpoint("Get PvP Leaderboard", "GET", "/leaderboard/pvp")
 
     def test_additional_endpoints(self):
         """Test additional endpoints that might be used by frontend"""
