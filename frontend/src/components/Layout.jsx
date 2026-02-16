@@ -37,10 +37,10 @@ export default function Layout({ children }) {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-white tracking-tight">
-                  PokeQuest
+                  Twisted Spoon
                 </h1>
                 <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">
-                  Bot Dashboard
+                  Pokémon Bot
                 </p>
               </div>
             </Link>
