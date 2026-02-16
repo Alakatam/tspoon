@@ -62,7 +62,7 @@ async function connectRedis() {
 }
 
 // Sync Pokemon data from PokeAPI
-async function syncPokeAPI(limit = 151) {
+async function syncPokeAPI(limit = 1025) {
   console.log(`🔄 Starting PokeAPI sync for first ${limit} Pokémon...`);
   
   const existingCount = await PokemonCache.countDocuments();
@@ -71,6 +71,7 @@ async function syncPokeAPI(limit = 151) {
     return;
   }
 
+  console.log(`📦 Currently have ${existingCount} Pokémon, syncing more...`);
   const POKEAPI_URL = process.env.POKEAPI_URL || 'https://pokeapi.co/api/v2';
   
   for (let id = 1; id <= limit; id++) {
