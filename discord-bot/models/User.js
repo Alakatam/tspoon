@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
   balance: { type: Number, default: 1000 },
   items: { type: Map, of: Number, default: {} },
   badges: [{ type: String }],
+  gymBadges: [{ type: String }],
   questProgress: {
     daily: { type: Map, of: mongoose.Schema.Types.Mixed, default: {} },
     weekly: { type: Map, of: mongoose.Schema.Types.Mixed, default: {} }
@@ -14,6 +15,10 @@ const userSchema = new mongoose.Schema({
   totalCatches: { type: Number, default: 0 },
   shinyCatches: { type: Number, default: 0 },
   pityCounter: { type: Number, default: 0 },
+  pvpWins: { type: Number, default: 0 },
+  pvpLosses: { type: Number, default: 0 },
+  raidWins: { type: Number, default: 0 },
+  worldBossDamage: { type: Number, default: 0 },
   lastDaily: { type: Date },
   lastWeekly: { type: Date },
   createdAt: { type: Date, default: Date.now },
