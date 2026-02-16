@@ -145,8 +145,8 @@ client.once(Events.ClientReady, async () => {
     status: 'online'
   });
 
-  // Sync PokeAPI data
-  await syncPokeAPI(151);
+  // Sync PokeAPI data - ALL 1025 Pokemon
+  await syncPokeAPI(1025);
 });
 
 // Handle slash commands
