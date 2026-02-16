@@ -1,7 +1,7 @@
 {
-  "name": "pokequest-bot",
+  "name": "twisted-spoon-bot",
   "version": "1.0.0",
-  "description": "Pokemon Discord Bot",
+  "description": "Twisted Spoon Pokemon Discord Bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
