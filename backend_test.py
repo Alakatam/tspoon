@@ -165,6 +165,26 @@ class PokemonAPITester:
         
         # Test recent activity
         self.test_endpoint("Get Recent Activity", "GET", "/activity/recent")
+        
+        # Test sync status (Phase 3/4)
+        self.test_endpoint("Get Sync Status", "GET", "/sync/status")
+
+    def test_phase3_battle_endpoints(self):
+        """Test Phase 3 Battle System endpoints"""
+        print("\n🔍 Testing Phase 3 Battle Endpoints...")
+        
+        # Test gym leaders list
+        self.test_endpoint("Get Gym Leaders", "GET", "/gym-leaders")
+        
+        # Test specific gym leader
+        self.test_endpoint("Get Gym Leader Brock", "GET", "/gym-leaders/brock")
+
+    def test_phase4_trade_auction_endpoints(self):
+        """Test Phase 4 Trade & Auction endpoints"""
+        print("\n🔍 Testing Phase 4 Trade & Auction Endpoints...")
+        
+        # Test active auctions
+        self.test_endpoint("Get Active Auctions", "GET", "/auctions/active")
 
     def run_all_tests(self):
         """Run all API tests"""
