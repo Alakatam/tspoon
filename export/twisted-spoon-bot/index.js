@@ -38,12 +38,20 @@ for (const file of commandFiles) {
 let redisClient = null;
 
 // Connect to MongoDB
+let dbConnected = false;
 async function connectDatabase() {
+  if (!process.env.MONGO_URL) {
+    console.warn('⚠️ MONGO_URL not set, running without MongoDB. Some features will be disabled.');
+    return false;
+  }
+
   try {
     await mongoose.connect(process.env.MONGO_URL, {
       dbName: process.env.DB_NAME
     });
     console.log('✅ Connected to MongoDB');
+    dbConnected = true;
+    return true;
   } catch (error) {
     console.error('❌ MongoDB connection error:', error);
     process.exit(1);
@@ -146,8 +154,12 @@ client.once(Events.ClientReady, async () => {
     status: 'online'
   });
 
-  // Sync PokeAPI data - ALL 1025 Pokemon
-  await syncPokeAPI(1025);
+  // Sync PokeAPI data - ALL 1025 Pokemon (requires DB)
+  if (dbConnected) {
+    await syncPokeAPI(1025);
+  } else {
+    console.warn('⚠️ Skipping PokeAPI sync because MongoDB is not connected.');
+  }
 });
 
 // Handle slash commands
@@ -187,7 +199,9 @@ process.on('unhandledRejection', error => {
 // Graceful shutdown
 process.on('SIGINT', async () => {
   console.log('Shutting down...');
-  await mongoose.connection.close();
+  if (mongoose.connection.readyState !== 0) {
+    await mongoose.connection.close();
+  }
   if (redisClient) await redisClient.quit();
   process.exit(0);
 });

@@ -21,8 +21,16 @@ const rest = new REST().setToken(process.env.DISCORD_TOKEN);
   try {
     console.log(`🔄 Deploying ${commands.length} slash commands...`);
 
-    if (!process.env.CLIENT_ID || process.env.CLIENT_ID === 'YOUR_CLIENT_ID_HERE') {
-      console.error('❌ Please set your CLIENT_ID in the .env file');
+    const applicationId = process.env.CLIENT_ID || process.env.DISCORD_BOT_ID;
+    const guildId = process.env.GUILD_ID || process.env.DISCORD_SERVER_ID;
+
+    if (!applicationId || applicationId === 'YOUR_CLIENT_ID_HERE') {
+      console.error('❌ Please set CLIENT_ID or DISCORD_BOT_ID in the .env file');
+      process.exit(1);
+    }
+
+    if (!guildId || guildId === 'YOUR_GUILD_ID_HERE') {
+      console.error('❌ Please set GUILD_ID or DISCORD_SERVER_ID in the .env file');
       process.exit(1);
     }
 
@@ -31,14 +39,14 @@ const rest = new REST().setToken(process.env.DISCORD_TOKEN);
       process.exit(1);
     }
 
-    // Deploy globally (takes up to an hour to propagate)
+    // Deploy to a single guild (updates almost instantly)
     const data = await rest.put(
-      Routes.applicationCommands(process.env.CLIENT_ID),
+      Routes.applicationGuildCommands(applicationId, guildId),
       { body: commands }
     );
 
-    console.log(`✅ Successfully deployed ${data.length} commands globally!`);
-    console.log('📖 Note: Global commands may take up to 1 hour to appear.');
+    console.log(`✅ Successfully deployed ${data.length} commands to guild ${guildId}!`);
+    console.log('📖 Note: Guild commands appear almost instantly.');
     
     console.log('\nDeployed commands:');
     commands.forEach(cmd => {
